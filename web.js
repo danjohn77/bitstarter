@@ -3,8 +3,10 @@ var app = express();
 var buffer = new buffer();
 app.use(express.logger());
 
+a = buffer.toString(fs.readFileSync('~/bitstarter/index.html'))
+
 app.get('/', function(request, response) {
-  response.send(buffer(fs.readFileSync('~/bitstarter/index.html')));
+  response.send(a);
 });
 
 var port = process.env.PORT || 5000;
